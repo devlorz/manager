@@ -7,6 +7,7 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 import config from '../node_modules/config';
 import firebase from 'firebase';
+import LoginForm from './components/LoginForm';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -17,9 +18,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <View>
-          <Text>Hello!</Text>
-        </View>
+        <LoginForm />
       </Provider>
     );
   }
