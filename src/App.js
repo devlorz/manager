@@ -1,13 +1,14 @@
 // @flow
 
 import React, { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import firebase from 'firebase';
+import { StyleSheet, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import reducers from './reducers';
 import config from '../node_modules/config';
-import firebase from 'firebase';
+import reducers from './reducers';
 import LoginForm from './components/LoginForm';
+import { Header } from './components/common';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -18,7 +19,10 @@ export default class App extends Component<Props> {
   render() {
     return (
       <Provider store={createStore(reducers)}>
-        <LoginForm />
+        <View>
+          <Header headerText="" />
+          <LoginForm />
+        </View>
       </Provider>
     );
   }
