@@ -10,6 +10,7 @@ import config from '../config';
 import reducers from './reducers';
 import LoginForm from './components/LoginForm';
 import { Header } from './components/common';
+import Router from './Router';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -22,9 +23,9 @@ export default class App extends Component<Props> {
 
     return (
       <Provider store={store}>
-        <View>
-          <Header headerText="" />
-          <LoginForm />
+        <View style={{ flex: 1 }}>
+          {/* <Header headerText="" /> */}
+          <Router />
         </View>
       </Provider>
     );
